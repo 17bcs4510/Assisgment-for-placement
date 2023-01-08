@@ -1,0 +1,29 @@
+{
+   "title":"UserProfile",
+   "type":"object",
+   "properties":{
+      "user_id":{
+         "type":"string"
+      },
+      "experiment_bucket_map":{
+         "type":"object",
+         "patternProperties":{
+            "^[a-zA-Z0-9]+$":{
+               "type":"object",
+               "properties":{
+                  "variation_id":{
+                     "type":"string"
+                  }
+               },
+               "required":[
+                  "variation_id"
+               ]
+            }
+         }
+      }
+   },
+   "required":[
+      "user_id",
+      "experiment_bucket_map"
+   ]
+}
